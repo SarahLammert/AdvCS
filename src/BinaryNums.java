@@ -209,7 +209,7 @@ public class BinaryNums {
 			
 			int numOne = (int)n;
 			int numTwo = numOne;
-			double newNum = (double)numOne;
+			double newNum = numOne;
 			
 			//Just decimal part
 			double fractionPart = n - newNum;
