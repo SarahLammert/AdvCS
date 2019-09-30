@@ -1,3 +1,4 @@
+package balloonTest;
 public class Balloon {
 	private int numPages;
 	private int currentPage;
