@@ -1,8 +1,8 @@
-package balloonTest;
-public class FakeBalloon {
+package bookTest;
+public class book {
 	private int numPages;
 	private int currentPage;
-	public FakeBalloon(int n) {
+	public book(int n) {
 		setNumPages(n);
 		setCurrentPage(1);
 		
