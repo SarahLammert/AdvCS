@@ -67,7 +67,7 @@ public class DrawingPanel extends JPanel
     {
       case 1: activeBalloon = new RoundBalloon(w/2, h/2, radius, color); break;
       case 2: activeBalloon = new OvalBalloon(w/2, h/2, radius, color); break;
-      case 3: activeBalloon = new SquareBalloon(w/2, h/2, radius, color); break;
+      case 3: activeBalloon = new RectangleBalloon(w/2, h/2, radius, color); break;
       case 4: activeBalloon = new FancyBalloon(w/2, h/2, radius, color); break;
       default: activeBalloon = new RoundBalloon(w/2, h/2, radius, color); break;
     }

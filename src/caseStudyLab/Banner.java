@@ -71,7 +71,7 @@ public class Banner extends JPanel
     b1 = new RoundBalloon(100, xB, 25, Color.BLACK);
     b2 = new FancyBalloon(200, xB, 25, Color.RED);
     b3 = new OvalBalloon(300, xB, 25, Color.YELLOW);
-    b4 = new SquareBalloon(400, xB, 25, Color.GRAY);
+    b4 = new RectangleBalloon(400, xB, 25, Color.GRAY);
     
 
     // Set this window's location and size:
