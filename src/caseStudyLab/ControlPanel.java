@@ -23,7 +23,7 @@ public class ControlPanel extends JPanel
     colorDisplay.setEnabled(false);
 
     //balloonButton = new JButton("Add Balloon");
-    String[] balloonShapeNames = {"Round", "Oval", "Square", "Fancy"};
+    String[] balloonShapeNames = {"Round", "Oval", "Rectangle", "Fancy"};
     chooseBalloonShape = new JComboBox<String>(balloonShapeNames);
     //balloonButton.addActionListener(new BalloonButtonListener());
     chooseBalloonShape.addActionListener(new BalloonButtonListener());
