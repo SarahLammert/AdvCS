@@ -134,4 +134,8 @@ public class Balloon
   public void draw(Graphics g, boolean makeItFilled)
   {
   }
+  
+  public String toString() {
+	  return "A balloon with x: " + this.getX() + " y: " + this.getY() + " r: " + this.getRadius();
+  }
 }
