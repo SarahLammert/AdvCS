@@ -1,4 +1,4 @@
-package AdvanceCSTest;
+package advanceCSTest;
 
 import java.util.Random;
 
