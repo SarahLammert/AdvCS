@@ -1,7 +1,7 @@
 package abstractClass;
 
 public class Test {
-	
+
 	public static void main(String[] args) {
 		Triangle t1 = new Triangle();
 		t1.addOneCoordinate(0.0, 0.0);
