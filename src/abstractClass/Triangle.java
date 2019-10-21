@@ -3,8 +3,12 @@ package abstractClass;
 public class Triangle extends Polygon {
 	
 	public static final int TRIANGLE_SIDES = 3;
-	public Triangle() {
+	
+	public Triangle(Point a, Point b, Point c) {
 		super(TRIANGLE_SIDES);
+		super.addOneCoordinate(a.x, a.y);
+		super.addOneCoordinate(b.x, b.y);
+		super.addOneCoordinate(c.x, c.y);
 	}
 	
 	@Override
