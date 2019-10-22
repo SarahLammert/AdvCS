@@ -11,6 +11,10 @@ public class Triangle extends Polygon {
 		super.addOneCoordinate(c.x, c.y);
 	}
 	
+	public Triangle() {
+		super(TRIANGLE_SIDES);
+	}
+	
 	@Override
 	public double area() {
 		Point x = coordinates.get(0);
@@ -26,11 +30,7 @@ public class Triangle extends Polygon {
 		Point x = coordinates.get(0);
 		Point y = coordinates.get(1);
 		Point z = coordinates.get(2);
-		if(disOfPoints(x, y) == disOfPoints(y, z) && disOfPoints(x, y) == disOfPoints(x, z)) {
-			return true;
-		} else {
-			return false;
-		}
+		return disOfPoints(x, y) == disOfPoints(y, z) && disOfPoints(x, y) == disOfPoints(x, z);
 		
 	}
 	
