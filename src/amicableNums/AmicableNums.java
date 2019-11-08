@@ -1,4 +1,4 @@
-package amicableNumbers;
+package amicableNums;
 
 import java.util.ArrayList;
 
