@@ -64,6 +64,7 @@ public class AmicableNums {
 		return sum;
 	}
 	
+	//Got this from https://stackoverflow.com/questions/4467177/find-sum-of-factors
 	public static int sumOfFactorsFastVersion(int n)
 	{
 		int a = n;
