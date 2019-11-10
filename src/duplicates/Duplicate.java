@@ -16,7 +16,7 @@ public class Duplicate {
 		letterList.add("d");
 		
 		System.out.println(letterList);
-		removeDuplicates(letterList);
+		anotherWayToRemoveDuplicates(letterList);
 		System.out.println(letterList);
 		
 	}
@@ -30,7 +30,16 @@ public class Duplicate {
 				}
 			}
 		}
-		
+	}
+	
+	public static void anotherWayToRemoveDuplicates(ArrayList<String> list) {
+		ArrayList<String> checkedList = new ArrayList<String>();
+		for(String s: list) {
+			if(!checkedList.contains(s)) {
+				checkedList.add(s);
+			}
+		}
+		letterList = checkedList;
 	}
 
 }
