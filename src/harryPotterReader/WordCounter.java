@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class WordCounter {
 	
 	//ArrayList to hold all unique words
-	private ArrayList<Word> uniqueWords = new ArrayList<Word>(80000);
+	private ArrayList<Word> uniqueWords = new ArrayList<Word>(1000);
 	
 	public WordCounter() {
 		System.out.println("This is a new word counter");
@@ -41,30 +41,29 @@ public class WordCounter {
 	}
 	
 	public static String stripSpecialChars(String w) {
-		String newW = w;
-		newW = newW.toLowerCase();
+		w = w.toLowerCase();
 		
 		//Finds the first letter and places the start of the substring there
 		//Then finds the last letter
-		if(newW.length() > 1) {
-			int s = 0;
-			int f = 1;
+		if(w.length() > 1) {
+			int startIndex = 0;
+			int endIndex = 1;
 			boolean first = true;
-			for(int i = 0; i < newW.length(); i++) {
-				if(Character.isLetter(newW.charAt(i))) {
+			for(int i = 0; i < w.length(); i++) {
+				if(Character.isLetter(w.charAt(i))) {
 					if(first) {
-						s = i;
+						startIndex = i;
 						first = false;
 					}
-					else if(i > f) {
-						f = i;
+					else if(i > endIndex) {
+						endIndex = i;
 					}
 				}
 			}
-			newW = newW.substring(s, f+1);
+			w = w.substring(startIndex, endIndex+1);
 		}
 		
-		return newW;
+		return w;
 	}
 	
 	public boolean isUnique(String aW) {
@@ -81,7 +80,7 @@ public class WordCounter {
 
 	public void printAllWords() {
 		for(Word w: uniqueWords) {
-			System.out.println(w.getWord() + ": " + w.getCount());
+			System.out.println(w.toString());
 		}
 	}
 	
@@ -93,6 +92,8 @@ public class WordCounter {
 	public static void main(String[] args) {
 		WordCounter wC = new WordCounter();
 		wC.openFile("harryPotter");
+		wC.printAllWords();
+		wC.printAWord(0);
 	}
 
 }
