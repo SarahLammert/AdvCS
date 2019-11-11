@@ -34,6 +34,7 @@ public class AmicableNums {
 		//This is way faster than the one up top: finds the sum of the factors way faster
 		//Also, the numbers are in order from smallest to largest -> Some pairs are not next to each other
 		//Two systems
+		/*
 		s2 = System.currentTimeMillis();
 		checked2 = new ArrayList<Integer>();
 		
@@ -50,6 +51,8 @@ public class AmicableNums {
 		System.out.println("All Done");
 		System.out.println("The total time was " + (f2-s2) + " milliseconds");
 		System.out.println(checked2.size());
+		*/
+		System.out.println(sumOfFactorsFastVersion(8));
 	}
 	
 	//Finds the sum of all factors of a
@@ -65,22 +68,27 @@ public class AmicableNums {
 	}
 	
 	//Got this from https://stackoverflow.com/questions/4467177/find-sum-of-factors
-	public static int sumOfFactorsFastVersion(int n)
+	//If you want to understand --- this link explains it https://www.math.upenn.edu/~deturck/m170/wk3/lecture/sumdiv.html
+	public static int sumOfFactorsFastVersion(int num)
 	{
-		int a = n;
-	    int prod=1;
-	    for(int k=2;k*k<=n;k++){
-	        int p=1;
-	        while(n%k==0){
-	            p=p*k+1;
-	            n/=k;
+		int origNum = num;
+	    int prod = 1;
+	    //Getting all the prime factors
+	    for(int k = 2; k * k <= num; k++){
+	        int x = 1;
+	        //if k is a divisor of num
+	        while(num % k==0) {
+	            x = x * k + 1; //8
+	            num /= k;
 	        }
-	        prod*=p;
+	        prod *= x;
 	    }
-	    if(n>1){
-	    	prod*=1+n;
+	    
+	    if(num > 1) {
+	    	prod *= 1 + num;
+	 
 	    }
-	    prod -= a;
+	    prod -= origNum;
 	    return prod;
 	}
 }
