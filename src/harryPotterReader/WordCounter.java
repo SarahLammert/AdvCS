@@ -78,12 +78,15 @@ public class WordCounter {
 		return numIsUnique;
 	}
 
-	public void printAllWords() {
+	public void printAllWordsLineByLine() {
 		for(Word w: uniqueWords) {
 			System.out.println(w.toString());
 		}
 	}
 	
+	public void printAllWordsArrayStyle() {
+		System.out.println(uniqueWords);
+	}
 	public void printAWord(int i) {
 		Word w = uniqueWords.get(i);
 		System.out.println(w.getWord() + ": " + w.getCount());
@@ -92,8 +95,8 @@ public class WordCounter {
 	public static void main(String[] args) {
 		WordCounter wC = new WordCounter();
 		wC.openFile("harryPotter");
-		wC.printAllWords();
-		wC.printAWord(0);
+		//wC.printAllWordsArrayStyle();
+		wC.printAllWordsLineByLine();
 	}
 
 }
