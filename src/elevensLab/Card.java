@@ -25,9 +25,9 @@ public class Card {
 	}
 	
 	public boolean isEqual(Card otherCard) {
-		return rank.equals(otherCard.rank)
-			&& suit.equals(otherCard.suit)
-			&& pointValue == otherCard.pointValue;
+		return this.getRank().equals(otherCard.getRank())
+			&& this.getSuit().equals(otherCard.getSuit())
+			&& this.getPointValue() == otherCard.getPointValue();
 	}
 	
 	@Override
