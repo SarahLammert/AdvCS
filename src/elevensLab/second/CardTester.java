@@ -1,4 +1,4 @@
-package elevensLab;
+package elevensLab.second;
 
 public class CardTester {
 	

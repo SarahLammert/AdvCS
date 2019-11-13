@@ -1,4 +1,4 @@
-package elevensLab;
+package elevensLab.first;
 
 public class Card {
 	
