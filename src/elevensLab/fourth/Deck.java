@@ -15,7 +15,6 @@ public class Deck {
 			cards.add(new Card(ranks[rVIndex], suits[sIndex], values[rVIndex]));
 		}
 		size = cards.size();
-		shuffle(); //Activity 4
 	}
 
 	public boolean isEmpty() {
@@ -33,18 +32,26 @@ public class Deck {
 	}
 
 	public void shuffle() {
-		
+		size = cards.size();
+		for(int k = cards.size()-1; k >= 0; k--) {
+			int r = (int)(Math.random() * (k+1));
+			Card temp = cards.get(r);
+			cards.set(r, cards.get(k));
+			cards.set(k, temp);
+		}
 	}
 	
 	public Card deal() {
 		size -= 1;
 		return cards.get(size);
 	}
-	
-	public ArrayList getCards() {
-		return cards;
-	}
 
+	public void printAllCards() {
+		for(Card c: cards) {
+			System.out.println(c);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		String rtn = "size = " + size + "\nUndealt cards: \n";

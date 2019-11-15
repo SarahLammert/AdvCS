@@ -1,5 +1,7 @@
 package elevensLab.second;
 
+import elevensLab.second.Deck;
+
 public class DeckTester {
 	
 	private static Deck d1;
