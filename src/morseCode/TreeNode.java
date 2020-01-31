@@ -1,4 +1,4 @@
-package doItYourselfBST;
+package morseCode;
 
 public class TreeNode {
 	private Object value;
