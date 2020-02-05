@@ -222,10 +222,10 @@ public class MyTreeSet implements Iterable<Object>
   public static void main(String[] args)
   {
 	MyTreeSet bst = new MyTreeSet();
-    int[] nums = {bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(),
-    			  bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(),
-    			  bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(),
-    			  bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom()};
+    int[] nums = {bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(), 
+    			  bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(), 
+    			  bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(), 
+    			  bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom(), bst.getRandom()};
 
     for (int n : nums)
     {
