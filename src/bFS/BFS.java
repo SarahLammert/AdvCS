@@ -1,7 +1,7 @@
 package bFS;
 
-import java.util.ArrayList;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BFS {
@@ -36,24 +36,29 @@ public class BFS {
 	}
 	
 	public int getHops(int target) {
-		deque.add(root);
+		
+		boolean[] visited = new boolean[list.size()];
 		int hops = 0;
 		int currentCount = 1;
 		int nextCount = 0;
+		deque.add(root);
 		while(!deque.isEmpty()) {
 			Node a = deque.pop();
-			if(a.getValue() == target) {
-				break;
-			}
-			for(int i = 0; i < a.getChildren().size(); i++) {
-				deque.addLast(a.getChildren().get(i));
-			}
-			nextCount += a.getChildren().size();
-			currentCount -= 1;
-			if(currentCount == 0) {
-				hops += 1;
-				currentCount = nextCount;
-				nextCount = 0;
+			if(!visited[a.getValue()-1]) {
+				visited[a.getValue()-1] = true;
+				for(int i = 0; i < a.getChildren().size(); i++) {
+					deque.addLast(a.getChildren().get(i));
+				}
+				nextCount += a.getChildren().size();
+				currentCount -= 1;
+				if(currentCount == 0) {
+					hops += 1;
+					currentCount = nextCount;
+					nextCount = 0;
+				}
+				if(a.getValue() == target) {
+					break;
+				}
 			}
 		}
 		return hops;
