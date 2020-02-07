@@ -1,5 +1,7 @@
 package bFS;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -65,33 +67,31 @@ public class BFS {
 	}
 
 	public static void main(String [] args) {
-		System.out.println("# of #s");
-		System.out.println("# of Connections");
-		System.out.println("Root");
-		System.out.println("Target");
-		System.out.println("Connections");
-		
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt(); //Amount of numbers
-		int m = s.nextInt(); //Number of connections
-		int r = s.nextInt();
-		int t = s.nextInt();
-		BFS b = new BFS();
-		
-		for(int x = 1; x <= n; x++) {
-			b.addNode(new Node(x));
+		try {
+			Scanner s;
+			s = new Scanner(new File("islands.in"));
+			int n = s.nextInt();
+			int m = s.nextInt();
+			int r = s.nextInt();
+			int t = s.nextInt();
+			BFS b = new BFS();
+			
+			for(int x = 1; x <= n; x++) {
+				b.addNode(new Node(x));
+			}
+			
+			for(int i = 0; i < m; i++) {
+				int x1 = s.nextInt();
+				int y1 = s.nextInt();
+				b.setChild(x1, y1);
+				b.setChild(y1, x1);
+			}
+			s.close();
+			b.setRoot(r);
+			System.out.println("The answer is " + b.getHops(t) + " hops.");
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
-		
-		for(int i = 0; i < m; i++) {
-			int x1 = s.nextInt();
-			int y1 = s.nextInt();
-			b.setChild(x1, y1);
-			b.setChild(y1, x1);
-		}
-		s.close();
-		
-		b.setRoot(r);
-		
-		System.out.println("The answer is " + b.getHops(t) + " hops.");
 	}
 }
